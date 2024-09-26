@@ -5,7 +5,6 @@ python -m venv venv
 ```
 
 2. 가상 환경 활성화
-(점 두 개 공백 유의하여 정확히 입력)
 ```bash
 source ./venv/bin/activate
 ```
