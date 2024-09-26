@@ -7,7 +7,7 @@ python -m venv venv
 2. 가상 환경 활성화
 (점 두 개 공백 유의하여 정확히 입력)
 ```bash
-. ./venv/bin/activate
+source ./venv/bin/activate
 ```
 
 3. requirements.txt 명시된 패키지 설치
