@@ -16,7 +16,8 @@ nltk.download("vader_lexicon")  # NLTK의 VADER 감정 사전 로컬 설치
 
 
 class ReviewScrapper:
-    def __init__(self) -> None:
+    def __init__(self, is_test=False) -> None:
+        self.__is_test = is_test
         self.__review_list_url = "https://www.creditkarma.com/reviews/personal-loan/single/id/lending-club-personal-loans"
 
         self.__result_dir_path: str = ""  # # 결과 엑셀 파일이 존재하는 디렉터리
@@ -24,7 +25,7 @@ class ReviewScrapper:
         self.__review_dict_list: list[dict[str, Any]] = []
 
     def run(self) -> None:
-        print("📢 크롤링 작업 시작")
+        print(f"📢 크롤링 작업 시작{': 테스트' if self.__is_test else ''}")
         self.__get_reviews()
         self.__set_result_xl()
         self.__analysis_sentiment()
@@ -186,7 +187,10 @@ class ReviewScrapper:
             except Exception as e:
                 print(f"⛔️ ERROR: {e}")
                 break
-            break  # TEST
+
+            # for TEST
+            if self.__is_test:
+                break
 
     def __analysis_sentiment(self):
         sia = SentimentIntensityAnalyzer()
