@@ -28,23 +28,28 @@
 
 ## 환경 세팅
 
-1. 가상 환경 세팅
+1. 프로젝트 클론
+```bash
+git clone https://github.com/minuzai/credit-karma_review-scraper
+```
+
+2. 가상 환경 세팅
 ```bash
 python -m venv venv
 ```
 
-2. 가상 환경 활성화
+3. 가상 환경 활성화
 ```bash
 source ./venv/bin/activate  # Mac
 .\venv\Scripts\activate  # Windows
 ```
 
-3. requirements.txt 명시된 패키지 설치
+4. 패키지 설치
 ```bash
 pip install -r requirements.txt
 ```
 
-4. main.py 실행
+5. 작업 실행
 ```bash
 python ./src/main.py
 ```
